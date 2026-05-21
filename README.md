@@ -7,3 +7,9 @@ Sistemul functioneaza  pe baza faptului ca eroul alege o optiune de atac iar ina
 # Magia are un sistsem de mana si e limitat de cate ori poti folosi magie
 #  La fel si la potiuni
 # Jucatorul joaca din prisma eroului Saphir
+
+
+Surse:
+https://osgameclones.com/
+https://github.com/realdmx/retrore
+https://github.com/Tupelov/Atlus-Library
