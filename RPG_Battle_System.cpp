@@ -23,6 +23,7 @@ class Character
     int getHP() {return hp;}
     int getATK(){return atk;}
 
+
 };
 
 
@@ -95,16 +96,15 @@ void showItem()
 };
 
 class Hero:public Character
-{ float mana;
+{ int mana;
     public:
    Inventory<Items*> inventory;
 
-Hero( float mana):Character("Saphir" , 100 , 10) , mana(mana) {}
+Hero( int mana):Character("Saphir" , 100 , 10) , mana(mana) {}
 
 void reduceMana(int amount) {mana -= amount;}
 
-float getMana() {return mana;}
-
+int getMana() {return mana;}
 };
 
 class Enemy:public Character
@@ -153,7 +153,7 @@ public:
 class FireMagicAtk: public AttackStrategy
 { public:
    virtual void execute(Character& attacker , Character& target) override
-   {   int fireDamage =  attacker.getATK();
+   {   int fireDamage =  13;
         target.takeDamage(fireDamage);
    }
 };
@@ -161,7 +161,7 @@ class FireMagicAtk: public AttackStrategy
 class ElectricMagicAtk: public AttackStrategy
 { public:
    virtual void execute(Character& attacker ,Character& target) override
-   {   int electricDamage =  attacker.getATK();
+   {   int electricDamage =  18;
      target.takeDamage(electricDamage);
    }
 };
@@ -179,7 +179,7 @@ void logEvent(T value)
 
 int main()
 {
-    Hero hero1(80.0f);
+    Hero hero1(80);
     BaseAtk baseAtk;
     FireMagicAtk fireAtk;
     ElectricMagicAtk electricAtk;
@@ -247,10 +247,10 @@ while(hero1.isAlive() && enemy -> isAlive())
       hero1.inventory.useItem(itemChoice - 1 , hero1); continue;}
 
       break;
-  default:
-   
-  }
- 
+  default:{std::cout<<"Error"<<std::endl;  continue;}
+
+break;  }
+
 
   hero1.takeDamage(enemy ->getATK());
 
