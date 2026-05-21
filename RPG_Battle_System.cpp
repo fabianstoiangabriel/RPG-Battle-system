@@ -250,7 +250,7 @@ while(hero1.isAlive() && enemy -> isAlive())
   default:
    
   }
- break;
+ 
 
   hero1.takeDamage(enemy ->getATK());
 
